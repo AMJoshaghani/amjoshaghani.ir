@@ -1,4 +1,4 @@
-# amjoshaghani.github.io
+# amjoshaghani.ir
 
 ## Project setup
 ```
