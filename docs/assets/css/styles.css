@@ -1,0 +1,89 @@
+@charset "utf-8";
+@font-face {
+    font-family: dejavuSans;
+    src: url('dejavu-sans.ttf');
+    font-display: swap;
+}
+
+* {
+    font-family: dejavuSans, sans-serif;
+}
+
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.basement {
+    margin-top: 20%;
+    border-radius: 5px;
+    position: relative;
+    background: linear-gradient(to top, rgb(19 44 62), #32de84);
+    height: 200px;
+}
+
+.name {
+    padding-top: 2%;
+    display: block;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-weight: lighter !important;
+}
+
+.links {
+    color: white;
+    font-size: 70px;
+    text-align: center;
+    width: 25%;
+    margin: 3% auto auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+i {
+    font-size: 30px;
+}
+
+i:hover {
+    -webkit-transform: translateX(0) translateZ(0);
+    transform: translateX(0) translateZ(0);
+    transition: 0.45s cubic-bezier(0.99, 0.99, 0, 1.76), opacity 0s 500ms;
+    -webkit-transition: 0.45s cubic-bezier(0.99, 0.99, 0, 1.76), opacity 0s 500ms;
+    font-size: 43px;
+}
+
+i[class="fab fa-github"] {
+    color: #000;
+}
+
+i[class="fab fa-telegram"] {
+    color: #29b6f6;
+}
+
+i[class="fab fa-linkedin"] {
+    color: #0077B5;
+}
+
+i[class="fab fa-instagram"] {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+i[class="fab fa-twitter"] {
+    color: #38A1F3;
+}
+
+i[class="fas fa-envelope"] {
+    color: #111;
+}
+
+@media only screen and (max-width: 600px) {
+    .p2 {
+        font-size: 3em;
+        padding: 3% 3% 3%;
+    }
+}
