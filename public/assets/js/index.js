@@ -28,5 +28,7 @@ function fadeOutEffect(selector, time) {
 window.onload = function(){
   let bg = 'https://picsum.photos/' + screen.width + '/' + screen.height;
   $( 'body' ).style.backgroundImage = `url(${bg})`;
-  $( '.basement' ).ondblclick = fadeOutEffect( '.basement', 1000 );
+  $( '.basement' ).ondblclick = function(){
+    fadeOutEffect( '.basement', 1000 );
+  }
 }
