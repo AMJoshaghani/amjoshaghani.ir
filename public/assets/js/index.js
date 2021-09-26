@@ -29,6 +29,6 @@ window.onload = function(){
   let bg = 'https://picsum.photos/' + screen.width + '/' + screen.height;
   $( 'body' ).style.backgroundImage = `url(${bg})`;
   $( '.basement' ).ondblclick = function(){
-    fadeOutEffect( '.basement', 500 );
+    fadeOutEffect( '.basement', 200 );
   }
 }
