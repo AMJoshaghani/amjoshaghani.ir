@@ -24,7 +24,7 @@ body {
 }
 
 .name {
-    padding-top: 2%;
+    padding-top: 5vh;
     display: block;
     text-align: center;
     color: white;
@@ -37,8 +37,8 @@ body {
     font-size: 70px;
     text-align: center;
     width: 25%;
-    margin: 3% auto auto;
-    display: flex;
+    margin: 1% auto auto;
+    display: grid;
     justify-content: space-around;
 }
 
@@ -81,9 +81,16 @@ i[class="fas fa-envelope"] {
     color: #111;
 }
 
+p {
+  grid-template-columns: repeat(6, 6vh);
+  grid-template-rows: 1fr;
+  grid-column-gap: 5px;
+  grid-row-gap: 0px;
+}
+
 @media only screen and (max-width: 600px) {
     .p2 {
-        font-size: 3em;
-        padding: 3% 3% 3%;
+        /*font-size: 3em;
+        padding: 3% 3% 3%;*/
     }
 }

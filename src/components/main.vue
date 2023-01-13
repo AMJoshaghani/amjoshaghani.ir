@@ -2,18 +2,18 @@
     <div class="basement">
         <h1 class="name" >Amir M. Joshaghani</h1>
         <p class="links">
-          <icon v-for="icon in icons" :key="icon.name" :href="icon.href" :icon="icon.icon" />
+          <iconI v-for="icon in icons" :key="icon.name" :href="icon.href" :icon="icon.icon" />
         </p>
     </div>
 </template>
 
 <script>
-import icon from "@/components/icon";
+import iconI from "@/components/icon";
 
 export default {
-  name: 'maindiv',
+  name: 'mainDiv',
   components: {
-    icon
+    iconI
   },
   data: ()=>({
     icons : [
