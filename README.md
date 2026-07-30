@@ -1,4 +1,4 @@
-# Next.js template
+# amjoshaghani.ir
 
 This is a Next.js template with shadcn/ui.
 
