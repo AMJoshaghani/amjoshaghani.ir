@@ -12,7 +12,7 @@ export default function Home() {
           <span className="inline-block w-2 h-2 bg-[#00ff88] rounded-full animate-pulse" />
           joehill@portfolio:~$ <span className="cursor-blink">init</span>
         </div>
-        <div className="text-[11px] text-gray-600">
+        <div className="text-[11px] text-[#AFA89D]">
           v2.1.0 | {new Date().toISOString().replace("T", " ").slice(0, 19)} UTC
         </div>
       </header>
@@ -81,7 +81,7 @@ export default function Home() {
 
           <section className="term-box">
             <div className="term-header">system.status</div>
-            <div className="text-[11px] text-gray-600 space-y-1">
+            <div className="text-[11px] text-[#AFA89D] space-y-1">
               <p>OS: Arch Linux (btw)</p>
               <p>Shell: zsh 5.9</p>
               <p>Editor: Neovim</p>
@@ -93,7 +93,7 @@ export default function Home() {
 
       {/* Footer */}
       {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
-      <footer className="border-t border-[#1a1a1a] pt-3 text-[11px] text-gray-700 text-center">
+      <footer className="border-t border-[#1a1a1a] pt-3 text-[11px] text-gray-100 text-center">
         // Built with Next.js // Amir Mohammad Joshaghani // 2026
       </footer>
     </main>

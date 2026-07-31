@@ -40,7 +40,7 @@ export default function GithubRepos() {
     return (
       <div className="term-box h-full">
         <div className="term-header">github.projects --fetch</div>
-        <div className="text-xs text-gray-600 animate-pulse">Fetching repositories...</div>
+        <div className="text-xs text-gray-200 animate-pulse">Fetching repositories...</div>
       </div>
     );
   }
@@ -58,7 +58,7 @@ export default function GithubRepos() {
               </a>
               <span className={"text-[10px]"} style={{"color": repo.languageColor || "#0f8"}}>{repo.language || "N/A"}</span>
             </div>
-            <p className="text-[11px] text-gray-400 mt-1 leading-relaxed">
+            <p className="text-[11px] text-gray-200 mt-1 leading-relaxed">
               {repo.description || "No description available."}
             </p>
             <div className="mt-1.5 text-[10px] text-gray-700 space-x-3">

@@ -159,8 +159,8 @@ export default function Game2048() {
     <div className="term-box flex flex-col items-center gap-3">
       <div className="term-header">game.2048 --inline</div>
       <div className="flex justify-between w-full text-xs text-gray-500">
-        <span>Score: <span className="text-[#00ff88]">{score}</span></span>
-        <span>Best: <span className="text-[#00ccff]">{best}</span></span>
+        <span className="text-gray-200">Score: <span className="text-[#00ff88]">{score}</span></span>
+        <span className="text-gray-200">Best: <span className="text-[#00ccff]">{best}</span></span>
       </div>
       <div
         ref={boardRef}
@@ -170,7 +170,7 @@ export default function Game2048() {
           <div key={i} className={cellClass(val)}>{val || ""}</div>
         ))}
       </div>
-      <p className="text-[11px] text-gray-600">WASD or swipe to play</p>
+      <p className="text-[11px] text-gray-200">WASD or swipe to play</p>
       <Button variant="outline" size="sm" onClick={init}
               className="border-[#00ff88] text-[#00ff88] hover:bg-[#00ff88] hover:text-black font-mono text-xs">
         restart
