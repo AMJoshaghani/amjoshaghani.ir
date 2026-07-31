@@ -35,3 +35,7 @@
         51%, 100% { opacity: 0; }
     }
 }
+
+.touch-none {
+    touch-action: none;
+}

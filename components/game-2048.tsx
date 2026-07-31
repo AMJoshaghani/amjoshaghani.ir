@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Button } from "@/components/ui/button";
 
 type Board = number[][];
@@ -9,6 +9,7 @@ export default function Game2048() {
   const [board, setBoard] = useState<Board>([]);
   const [score, setScore] = useState(0);
   const [best, setBest] = useState(0);
+  const boardRef = useRef<HTMLDivElement>(null);
 
   const createEmpty = (): Board =>
     Array(4).fill(null).map(() => Array(4).fill(0));
@@ -105,8 +106,45 @@ export default function Game2048() {
     return () => window.removeEventListener("keydown", handler);
   }, [move]);
 
+  useEffect(() => {
+    const el = boardRef.current;
+    if (!el) return;
+
+    let startX = 0;
+    let startY = 0;
+
+    const onTouchStart = (e: TouchEvent) => {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+    };
+
+    const onTouchEnd = (e: TouchEvent) => {
+      const dx = e.changedTouches[0].clientX - startX;
+      const dy = e.changedTouches[0].clientY - startY;
+      const threshold = 20;
+
+      if (Math.abs(dx) < threshold && Math.abs(dy) < threshold) return;
+
+      if (Math.abs(dx) > Math.abs(dy)) {
+        if (dx > 0) move(2);
+        else move(0);
+      } else {
+        if (dy > 0) move(1);
+        else move(3);
+      }
+    };
+
+    el.addEventListener("touchstart", onTouchStart, { passive: true });
+    el.addEventListener("touchend", onTouchEnd, { passive: true });
+
+    return () => {
+      el.removeEventListener("touchstart", onTouchStart);
+      el.removeEventListener("touchend", onTouchEnd);
+    };
+  }, [move]);
+
   const cellClass = (val: number) => {
-    const base = "w-[60px] h-[60px] bg-[#1a1a1a] rounded flex items-center justify-center text-lg font-bold transition-all";
+    const base = "w-[60px] h-[60px] bg-[#1a1a1a] rounded flex items-center justify-center text-lg font-bold transition-all select-none";
     const colors: Record<number, string> = {
       2: "text-[#eee]", 4: "text-[#ddd]", 8: "text-[#ffaa00]",
       16: "text-[#ff7700]", 32: "text-[#ff4400]", 64: "text-[#ff0000]",
@@ -124,12 +162,15 @@ export default function Game2048() {
         <span>Score: <span className="text-[#00ff88]">{score}</span></span>
         <span>Best: <span className="text-[#00ccff]">{best}</span></span>
       </div>
-      <div className="grid grid-cols-4 gap-2 bg-[#111] p-3 rounded-lg border border-[#222]">
+      <div
+        ref={boardRef}
+        className="grid grid-cols-4 gap-2 bg-[#111] p-3 rounded-lg border border-[#222] touch-none"
+      >
         {board.flat().map((val, i) => (
           <div key={i} className={cellClass(val)}>{val || ""}</div>
         ))}
       </div>
-      <p className="text-[11px] text-gray-600">Use WASD keys.</p>
+      <p className="text-[11px] text-gray-600">WASD or swipe to play</p>
       <Button variant="outline" size="sm" onClick={init}
               className="border-[#00ff88] text-[#00ff88] hover:bg-[#00ff88] hover:text-black font-mono text-xs">
         restart
