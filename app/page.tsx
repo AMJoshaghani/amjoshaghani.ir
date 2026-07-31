@@ -25,7 +25,7 @@ export default function Home() {
             <div className="term-header">identity.profile</div>
             <div className="flex items-center gap-4 mb-3">
               <div className="w-20 h-20 rounded-full border-2 border-[#00ff88] overflow-hidden bg-[#111]">
-                <Image src={myPic} alt="Amir" width={80} height={80} className="object-cover" loading="eager" />
+                <Image src={myPic} alt="Amir" width={80} height={80} className="object-cover" loading="eager" priority />
               </div>
               <div>
                 <h1 className="text-lg font-bold text-white">Amir Mohammad Joshaghani</h1>
