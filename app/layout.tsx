@@ -6,7 +6,7 @@ const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
   title: "Amir Mohammad Joshaghani",
-  description: "UI/UX Programmer | Physics Undergrad",
+  description: "Fullstack Programmer & UI/UX Designer | Physics Undergrad @ Sharif UT",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

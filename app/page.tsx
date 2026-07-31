@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Game2048 from "@/components/game-2048";
 import GithubRepos from "@/components/github-repos";
+import myPic from "@/public/me.jpg";
 
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ export default function Home() {
             <div className="term-header">identity.profile</div>
             <div className="flex items-center gap-4 mb-3">
               <div className="w-20 h-20 rounded-full border-2 border-[#00ff88] overflow-hidden bg-[#111]">
-                <Image src="/me.jpg" alt="Amir" width={80} height={80} className="object-cover" loading="eager" />
+                <Image src={myPic} alt="Amir" width={80} height={80} className="object-cover" loading="eager" />
               </div>
               <div>
                 <h1 className="text-lg font-bold text-white">Amir Mohammad Joshaghani</h1>
