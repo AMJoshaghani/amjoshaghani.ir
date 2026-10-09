@@ -2,7 +2,7 @@ import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
   output: 'export',
-  target: 'serverless',
+  output: "standalone",
   reactStrictMode: true,
   basePath: "",
   images: {
